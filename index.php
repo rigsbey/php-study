@@ -20,6 +20,7 @@ function Fibonachi ($n){
     <input  type="submit" value="send"><br><br>
     <?$a = ($_GET['press']);
 
+    
     for($i = 0; $i <= $a; $i++){
     echo Fibonachi($i);
     echo "  ";
