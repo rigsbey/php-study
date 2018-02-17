@@ -1,9 +1,9 @@
 <?php
-$n = 0;
-function Fibonachi ($n){
-    if($n == 1) return 1;
+function Fibonachi($n)
+{
+    if ($n == 1) return 1;
     if ($n == 2) return 1;
-    if($n >= 3) return  Fibonachi($n -1) + Fibonachi($n-2);
+    if ($n >= 3) return Fibonachi($n - 1) + Fibonachi($n - 2);
 }
 ?>
 <!DOCTYPE HTML>
@@ -16,19 +16,17 @@ function Fibonachi ($n){
 <body>
 <form action="index.php" method="get">
     <b>Введите число N: </b>
-    <input  type="text" name="press">
-    <input  type="submit" value="send"><br><br>
-    <?$a = ($_GET['press']);
+    <input type="text" name="press">
+    <input type="submit" value="send"><br><br>
+    <? $a = ($_GET['press']);
 
-    
-    for($i = 0; $i <= $a; $i++){
-    echo Fibonachi($i);
-    echo "  ";
+    for ($i = 0; $i <= $a; $i++) {
+        echo Fibonachi($i);
+        echo "  ";
     }
     ?>
 </form>
 
-
+<a href="hw.php">Задание №3</a>
 </body>
-
 </html>
