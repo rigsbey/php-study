@@ -68,20 +68,20 @@ $arr = array("first" => 4, "second" => 19, "third" => 12);
     <tr>
         <td>
             <b>Вариант 1: </b>
-            <?php
+            <?
             $string = "";
             $implode_arr = implode($string, $arr_unique);
             echo $implode_arr;
             ?><br>
             <b>Вариант 2: </b>
-            <?php
+            <?
             for ($i = 0; $i < count($arr_unique); $i++) {
                 echo $arr_unique[$i] . "   ";
             }
             ?>
         </td>
         <td>
-            <?php
+            <?
             $decart = "После этого я решил искать другие истины. Я остановился на объекте
         геометров, который я представлял себе непрерывным телом, или
         пространством, неограниченно простирающимся в длину, ширину и высоту или
@@ -123,17 +123,36 @@ $arr = array("first" => 4, "second" => 19, "third" => 12);
 
     <tr>
         <td>
-            <?php
+            <?
             $str = '<h1>Привет, мир!</h1>';
             echo strip_tags($str);
+            ?>
+        </td>
+        <td>
+            <?
+            $str_greca = 'Ехал грека через реку';
+            $str_find = 'ре';
+            echo strpos($str_greca, $str_find);
 
+            ?>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?
+            echo "<b>количество вхождений «ре» : </b>" . substr_count($str_greca, "ре");
+            ?>
+        </td>
+        <td>
+            <?
+            echo "<b>длина строки: </b>" . strlen($str_greca);
             ?>
         </td>
     </tr>
 
 </table>
 
-
+<a href="hw3.php">Домашнее задание №3</a>
 </body>
 
 </html>

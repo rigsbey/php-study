@@ -27,6 +27,7 @@ function Fibonachi($n)
     ?>
 </form>
 
-<a href="hw.php">Задание №3</a>
+<a href="hw.php">Не домашнее задание </a>
+<a href="hw3.php">Домашнее задание №3</a>
 </body>
 </html>
