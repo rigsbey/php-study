@@ -125,10 +125,9 @@ $arr = array("first" => 4, "second" => 19, "third" => 12);
         <td>
             <?php
             $str = '<h1>Привет, мир!</h1>';
+            echo strip_tags($str);
 
-            echo   strip_tags($str);
-
-             ?>
+            ?>
         </td>
     </tr>
 
