@@ -140,7 +140,7 @@ $arr = array("first" => 4, "second" => 19, "third" => 12);
     <tr>
         <td>
             <?
-            echo "<b>количество вхождений «ре» : </b>" . substr_count($str_greca, "ре");
+            echo "<b>количество вхождений «ре» : " . substr_count($str_greca, "ре") . "</b>";
             ?>
         </td>
         <td>

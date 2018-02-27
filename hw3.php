@@ -1,53 +1,73 @@
 <?php
-$animals = array("Africa" => array("Zebra", "Giant East African Snail", "Butterflies"),
-    "Asia" => array("Dogs", "Chimpanzees", "Tigers"),
-    "North America" => array("Procyon lotor", "Lepus europaeus", "Conepatus semistriatus"),
-    "South America" => array("Mico leucippe", "Priodontes maximu", "Lontra felina"),
-    "Australia" => array("Phascolarctos cinereus", "Tachyglossus aculeatus", "Ornithorhynchus anatinus"),
-    "Europe" => array("Canis aureus", "Canis lupus", "Vulpes vulpes")
-);
+$json_data = file_get_contents('book.json');
+$dec_json = json_decode($json_data, true);
+
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Задание №3 </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style type="text/css">
+        body {
+            background-image: url(http://wallpaperscraft.ru/image/ajsberg_antarktida_ldina_okean_106996_3840x2400.jpg); /* Путь к фоновому изображению */
+
+            width: auto;
+            height: auto;
+        }
+
+        .brd {
+            border: 2px double rgba(0, 0, 1, 0.2); /* Параметры границы */
+            background: rgba(0, 0, 3, 0.05); /* Цвет фона */
+            padding: 10px; /* Поля вокруг текста */
+            border-radius: 6px;
+        }
+        IMG.displayed {
+            display: block;
+            margin-left: auto;
+            margin-right: auto ;
+        }
+        P { text-align: center }
+    </style>
 </head>
 
 <body>
-<table border="2">
-    <tr>
-        <td>
-            <b>Африка: <br> </b>
-            <?php
-            $gluing = implode($animals["Africa"]);
-            echo $gluing;
-            ?>
-        </td>
 
-        <td>
-            <b>Животные из 2 - х слов: <br> </b>
-            <?php
-            /*
-            implode($animals["Asia"]);
-            implode($animals["North America"]);
-            implode($animals["Europe"]);
-            implode($animals["Australia"]);
-            implode($animals["South America"]);
-            implode($animals["Africa"]);
 
-            echo strpos(implode($animals["Europe"]), " ");
-            */
-            echo $animals["South America"[3]];
-            ?>
-        </td>
+<div class="brd" style="margin: 0 auto; width: 270px; margin-top: 15%">
 
-    </tr>
+    <table border="1">
 
-</table>
+        <?php
+        $city = "Ульяновск";
+        $appid = "2aae63eafc2b63adfa86d0b622e0ef72";
+        $mode = "json";
+        $units = "metric";
+        $lang = "ru";
 
-<br><a href="hw.php">Не домашнее задание </a>
-<a href="hw.php">Задание №3</a>
+
+        $url_weather = "http://api.openweathermap.org/data/2.5/weather?q=$city&appid=$appid&units=$units&lang=$lang";
+        $data = file_get_contents($url_weather);
+        $array_days = json_decode($data);
+        $icon = $array_days->weather[0]->icon;
+
+        echo "<h1 align='center'>" . $array_days->name . "</h1><br>";//город
+        echo "<IMG class='displayed' src='http://openweathermap.org/img/w/$icon.png' alt= 'иизи'> ";//картинка
+
+
+
+        echo "<h1 align='center'> " . $array_days->main->temp . "&deg С</h1>";//температура
+        echo "<hr align=\"center\" width=\"100%\" size=\"50\" color='#000000' />";//просто полоска
+
+        echo " <b>Осадки: </b> " . $array_days->weather[0]->description . "<br>";//состояние
+        echo " <b>Скорост ветра: </b> " . $array_days->wind->speed . " м/с<br>";
+        echo " <b>Давление: </b> " . $array_days->main->pressure  . " каких - то едениц<br>";
+        echo " <b>Влажность: </b> " . $array_days->main->humidity . " %<br>";
+
+
+        ?>
+    </table>
 
 </body>
 </html>

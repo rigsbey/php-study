@@ -1,0 +1,22 @@
+[
+  {
+    "firstName" : "Kamil",
+    "lastName" : "Ab",
+    "adress" : "Tolbukhina 61"
+  },
+  {
+    "firstName" : "Fuad",
+    "lastName" : "Nikolson",
+    "adress" : "Decabristov 90"
+  },
+  {
+    "firstName" : "Alex",
+    "lastName" : "Ivanov",
+    "adress" : "Minaeva 87"
+  },
+  {
+    "firstName" : "Vasya",
+    "lastName" : "Tupolev",
+    "adress" : "Mayakovskogo 87"
+  }
+]
