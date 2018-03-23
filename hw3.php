@@ -23,12 +23,16 @@ $dec_json = json_decode($json_data, true);
             padding: 10px; /* Поля вокруг текста */
             border-radius: 6px;
         }
+
         IMG.displayed {
             display: block;
             margin-left: auto;
-            margin-right: auto ;
+            margin-right: auto;
         }
-        P { text-align: center }
+
+        P {
+            text-align: center
+        }
     </style>
 </head>
 
@@ -48,13 +52,15 @@ $dec_json = json_decode($json_data, true);
 
 
         $url_weather = "http://api.openweathermap.org/data/2.5/weather?q=$city&appid=$appid&units=$units&lang=$lang";
+        //$url_weather1 = "http://api.openweathermap.org/data/2.5/weather?q=moscow&appid=2aae63eafc2b63adfa86d0b622e0ef72";
+
+
         $data = file_get_contents($url_weather);
         $array_days = json_decode($data);
         $icon = $array_days->weather[0]->icon;
 
-        echo "<h1 align='center'>" . $array_days->name . "</h1><br>";//город
+        echo "<h1 align='center'>" . $city . "</h1><br>";//город
         echo "<IMG class='displayed' src='http://openweathermap.org/img/w/$icon.png' alt= 'иизи'> ";//картинка
-
 
 
         echo "<h1 align='center'> " . $array_days->main->temp . "&deg С</h1>";//температура
@@ -62,7 +68,7 @@ $dec_json = json_decode($json_data, true);
 
         echo " <b>Осадки: </b> " . $array_days->weather[0]->description . "<br>";//состояние
         echo " <b>Скорост ветра: </b> " . $array_days->wind->speed . " м/с<br>";
-        echo " <b>Давление: </b> " . $array_days->main->pressure  . " каких - то едениц<br>";
+        echo " <b>Давление: </b> " . $array_days->main->pressure . " каких - то едениц<br>";
         echo " <b>Влажность: </b> " . $array_days->main->humidity . " %<br>";
 
 

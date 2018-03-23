@@ -1,0 +1,14 @@
+[
+  {
+    "name" : "Kamil",
+    "login":"kama00",
+    "password":"pass",
+    "e-mail":"ab.kam@yandex.ru"
+  },
+  {
+    "name" : "Peter",
+    "login":"peter",
+    "password":"school00",
+    "e-mail":"ptr@mail.ru"
+  }
+]
